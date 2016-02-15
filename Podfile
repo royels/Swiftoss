@@ -5,7 +5,6 @@ use_frameworks!
 
 target 'Swiftoss' do
 	pod 'Alamofire', '2.0.2'
-	pod 'Swiftoss', :path => '~/Desktop/Workshop/Swiftoss'
 end
 
 target 'SwiftossTests' do
