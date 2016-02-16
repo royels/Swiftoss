@@ -8,3 +8,9 @@
 
 import Foundation
 import Alamofire
+
+class Swiftoss {
+    
+    
+    
+}

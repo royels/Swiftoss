@@ -12,6 +12,7 @@
 		4C4454541C708830008365E5 /* SwiftossTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4454531C708830008365E5 /* SwiftossTests.swift */; };
 		4C4454641C714D71008365E5 /* Swiftoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4454631C714D71008365E5 /* Swiftoss.swift */; };
 		4C4454661C714DF4008365E5 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4454651C714DF4008365E5 /* Resource.swift */; };
+		4C844EE71C72FFA200F237FA /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C844EE61C72FFA200F237FA /* Address.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		4C4454551C708830008365E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C4454631C714D71008365E5 /* Swiftoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiftoss.swift; sourceTree = "<group>"; };
 		4C4454651C714DF4008365E5 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		4C844EE61C72FFA200F237FA /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		A83F7BA06364B043F5E15AAB /* Pods-Swiftoss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftoss.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftoss/Pods-Swiftoss.release.xcconfig"; sourceTree = "<group>"; };
 		AC1F93A86155263FEAE87A1F /* Pods-Swiftoss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftoss.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftoss/Pods-Swiftoss.debug.xcconfig"; sourceTree = "<group>"; };
 		D0111B8494E03EA332D7FCB2 /* Pods_Swiftoss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftoss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				4C4454651C714DF4008365E5 /* Resource.swift */,
+				4C844EE61C72FFA200F237FA /* Address.swift */,
 			);
 			name = SwiftossSource;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C844EE71C72FFA200F237FA /* Address.swift in Sources */,
 				4C4454641C714D71008365E5 /* Swiftoss.swift in Sources */,
 				4C4454661C714DF4008365E5 /* Resource.swift in Sources */,
 			);
