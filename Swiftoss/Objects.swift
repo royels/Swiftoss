@@ -6,13 +6,20 @@
 //  Copyright © 2016 Royels. All rights reserved.
 //
 
+
+
 import Foundation
 
+
 class Address {
-    
     var resource = Resource(options: [:])
     init(resource: Resource) {
-       self.resource = resource
+        self.resource = resource
+    }
+    
+    func verify(options: Dictionary<String, Any> = ["":""]) -> Any {
+        Swiftoss.print(Constants.POST)
+        return 0
     }
     
     

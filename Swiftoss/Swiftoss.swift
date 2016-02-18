@@ -11,6 +11,8 @@ import Alamofire
 
 class Swiftoss {
     
-    
+    static func print(funk: String) {
+        print(funk);
+    }
     
 }

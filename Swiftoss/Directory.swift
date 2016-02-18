@@ -10,9 +10,9 @@ import Foundation
 
 class Resource {
     
-    var options = Dictionary<String, String>()
-    
-    init(options: Dictionary<String, String>) {
+    var options = Dictionary<String, Any>()
+
+    init(options: Dictionary<String, Any>) {
         self.options = options
     }
     
