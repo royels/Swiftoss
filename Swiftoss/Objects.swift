@@ -18,7 +18,12 @@ class Address {
     }
     
     func verify(options: Dictionary<String, Any> = ["":""]) -> Any {
-        Swiftoss.print(Constants.POST)
+     
+        return 0
+    }
+    
+    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+        
         return 0
     }
     

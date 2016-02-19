@@ -11,8 +11,16 @@ import Alamofire
 
 class Swiftoss {
     
+    // debugging method
     static func print(funk: String) {
-        print(funk);
+        
     }
+    
+    static func send(method: String, url: String, parameters: Dictionary<String, Any>) -> Any {
+        
+        return 0
+    }
+    
+    
     
 }
