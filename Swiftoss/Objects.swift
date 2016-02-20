@@ -11,10 +11,11 @@
 import Foundation
 
 
-class Address {
+class Address: Resource {
     var resource = Resource(options: [:])
     init(resource: Resource) {
         self.resource = resource
+        super.init(options: resource.options)
     }
     
     func verify(options: Dictionary<String, Any> = ["":""]) -> Any {
@@ -26,6 +27,23 @@ class Address {
         
         return 0
     }
+    
+    func find(addressId: String) -> Any {
+        return 0
+    }
+    
+    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
+        return 0
+    }
+    
+    private func address_url(address_id: String = "") -> String {
+        return ""
+    }
+    
+    private func address_verify_url() -> String {
+        return ""
+    }
+    
     
     
     

@@ -9,63 +9,12 @@
 import Foundation
 
 class Resource {
-    
     var options = Dictionary<String, Any>()
-
+    
     init(options: Dictionary<String, Any>) {
         self.options = options
     }
-    
-    func areas() -> Area {
-        return Area(resource: self)
-    }
-    
-    func addresses() -> Address{
-        return Address(resource: self)
-    }
-    
-    func bank_accounts() -> BankAccount
-    {
-        return BankAccount(resource: self)
-    }
-    
-    func checks() -> Check{
-        return Check(resource: self)
-    }
-    
-    func countries() -> Country {
-        return Country(resource: self)
-    }
-    
-    func jobs() -> Job {
-        return Job(resource: self)
-    }
-    
-    func letters() -> Letter {
-        return Letter(resource: self)
-    }
-    
-    func objects() -> Object{
-        return Object(resource: self)
-    }
-    
-    func postcards() -> Postcard {
-        return Postcard(resource: self)
 
-    }
-    
-    func routes() -> Route {
-        return Route(resource: self)
-    }
-    
-    func settings() -> Setting {
-        return Setting(resource: self)
-    }
-    
-    func states() -> State {
-        return State(resource: self)
-    }
-    
     func baseUrl() -> String {
         let toReturn = "\(self.options["protocol"])://\(self.options["apiKey"]):\(self.options["apiURL"])"
         return toReturn
@@ -82,6 +31,64 @@ class Resource {
         
     }
     
+}
+
+class Factory {
+    var resource = Resource(options: ["":""])
     
+    init(options: Dictionary<String, Any>) {
+        self.resource = Resource(options: options)
+    }
+    
+    func areas() -> Area {
+        return Area(resource: self.resource)
+    }
+    
+    func addresses() -> Address{
+        return Address(resource: self.resource)
+    }
+    
+    func bank_accounts() -> BankAccount
+    {
+        return BankAccount(resource: self.resource)
+    }
+    
+    func checks() -> Check{
+        return Check(resource: self.resource)
+    }
+    
+    func countries() -> Country {
+        return Country(resource: self.resource)
+    }
+    
+    func jobs() -> Job {
+        return Job(resource: self.resource)
+    }
+    
+    func letters() -> Letter {
+        return Letter(resource: self.resource)
+    }
+    
+    func objects() -> Object{
+        return Object(resource: self.resource)
+    }
+    
+    func postcards() -> Postcard {
+        return Postcard(resource: self.resource)
+        
+    }
+    
+    func routes() -> Route {
+        return Route(resource: self.resource)
+    }
+    
+    func settings() -> Setting {
+        return Setting(resource: self.resource)
+    }
+    
+    func states() -> State {
+        return State(resource: self.resource)
+    }
     
 }
+
