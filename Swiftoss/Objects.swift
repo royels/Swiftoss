@@ -19,7 +19,7 @@ class Address: Resource {
     }
     
     func verify(options: Dictionary<String, Any> = ["":""]) -> Any {
-     
+        super.constructUrl("mackarel")
         return 0
     }
     
@@ -35,17 +35,6 @@ class Address: Resource {
     func create(options: Dictionary<String, Any> = ["":""]) -> Any {
         return 0
     }
-    
-    private func address_url(address_id: String = "") -> String {
-        return ""
-    }
-    
-    private func address_verify_url() -> String {
-        return ""
-    }
-    
-    
-    
     
 }
 
