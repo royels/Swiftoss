@@ -12,14 +12,11 @@ import Foundation
 
 
 class Address: Resource {
-    var resource = Resource(options: [:])
-    init(resource: Resource) {
-        self.resource = resource
-        super.init(options: resource.options)
+    override init(options: Dictionary<String, Any>) {
+        super.init(options: options)
     }
     
     func verify(options: Dictionary<String, Any> = ["":""]) -> Any {
-        super.constructUrl("mackarel")
         return 0
     }
     
@@ -36,19 +33,28 @@ class Address: Resource {
         return 0
     }
     
+    func destroy(addressId: String) -> Any {
+        
+        return 0
+    }
+    
+    private func addressUrl(addressId: String = "") {
+        super.constructUrl(Constants.ADDRESS_ENDPT, resourceID: addressId)
+    }
+    private func addressVerifyURL() {
+        super.constructUrl(Constants.VERIFY_ADDRESS_ENDPT)
+    }
+    
 }
 
 
 
 
-class Area {
+class Area: Resource {
     
-    var resource = Resource(options: [:])
-    init(resource: Resource) {
-        self.resource = resource
+    override init(options: Dictionary<String, Any>) {
+        super.init(options: options)
     }
-    
-    
     
     
 }

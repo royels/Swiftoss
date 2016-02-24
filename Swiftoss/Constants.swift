@@ -14,4 +14,5 @@ struct Constants {
     static var GET  = "get"
     static var DELETE = "delete"
     static var ADDRESS_ENDPT = "addresses"
+    static var VERIFY_ADDRESS_ENDPT = "verify"
 }

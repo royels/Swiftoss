@@ -34,60 +34,60 @@ class Resource {
 }
 
 class Factory {
-    var resource = Resource(options: ["":""])
+    var options = Dictionary<String, Any>();
     
     init(options: Dictionary<String, Any>) {
-        self.resource = Resource(options: options)
+        self.options = options
     }
     
     func areas() -> Area {
-        return Area(resource: self.resource)
+        return Area(self.options)
     }
     
     func addresses() -> Address{
-        return Address(resource: self.resource)
+        return Address(options: options)
     }
     
     func bank_accounts() -> BankAccount
     {
-        return BankAccount(resource: self.resource)
+        return BankAccount(options: options)
     }
     
     func checks() -> Check{
-        return Check(resource: self.resource)
+        return Check(options: options)
     }
     
     func countries() -> Country {
-        return Country(resource: self.resource)
+        return Country(options: options)
     }
     
     func jobs() -> Job {
-        return Job(resource: self.resource)
+        return Job(options: options)
     }
     
     func letters() -> Letter {
-        return Letter(resource: self.resource)
+        return Letter(options: options)
     }
     
     func objects() -> Object{
-        return Object(resource: self.resource)
+        return Object(options: options)
     }
     
     func postcards() -> Postcard {
-        return Postcard(resource: self.resource)
+        return Postcard(options: options)
         
     }
     
     func routes() -> Route {
-        return Route(resource: self.resource)
+        return Route(options: options)
     }
     
     func settings() -> Setting {
-        return Setting(resource: self.resource)
+        return Setting(options: options)
     }
     
     func states() -> State {
-        return State(resource: self.resource)
+        return State(options: options)
     }
     
 }
