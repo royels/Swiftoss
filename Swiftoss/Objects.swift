@@ -11,9 +11,10 @@
 import Foundation
 
 
-class Address: Resource {
-    override init(options: Dictionary<String, Any>) {
-        super.init(options: options)
+class Address {
+    var resource = Resource(options: [:])
+    init(resource: Resource) {
+       self.resource = resource
     }
     
     func verify(options: Dictionary<String, Any> = ["":""]) -> Any {
@@ -38,11 +39,11 @@ class Address: Resource {
         return 0
     }
     
-    private func addressUrl(addressId: String = "") {
-        super.constructUrl(Constants.ADDRESS_ENDPT, resourceID: addressId)
+    private func addressUrl(addressId: String = "") -> String {
+        return self.resource.constructUrl(Constants.Objects.ADDRESS_ENDPT, resourceID: addressId)
     }
-    private func addressVerifyURL() {
-        super.constructUrl(Constants.VERIFY_ADDRESS_ENDPT)
+    private func addressVerifyURL() -> String {
+        return self.resource.constructUrl(Constants.Objects.VERIFY_ADDRESS_ENDPT)
     }
     
 }
@@ -50,24 +51,66 @@ class Address: Resource {
 
 
 
-class Area: Resource {
-    
-    override init(options: Dictionary<String, Any>) {
-        super.init(options: options)
-    }
-    
-    
-}
-
-class BankAccount {
+class Area {
     
     var resource = Resource(options: [:])
     init(resource: Resource) {
         self.resource = resource
     }
     
+    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+        return 0
+    }
     
+    func find(areaId: String) -> Any {
+        return 0
+    }
     
+    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
+        return 0
+    }
+
+    private func areaUrl(areaId: String = "") -> String {
+        return self.resource.constructUrl(Constants.Objects.AREA_ENDPT, resourceID: areaId)
+    }
+
+}
+
+class BankAccount {
+    var resource = Resource(options: [:])
+    init(resource: Resource) {
+        self.resource = resource
+    }
+    
+    func verify(options: Dictionary<String, Any> = ["":""]) -> Any {
+        return 0
+    }
+    
+    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+        
+        return 0
+    }
+    
+    func find(bankAccountId: String) -> Any {
+        return 0
+    }
+    
+    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
+        return 0
+    }
+    
+    func destroy(bankAccountId: String) -> Any {
+        
+        return 0
+    }
+    
+    func verify(bankAccountId: String, options: Dictionary<String, Any>) -> Any {
+        return 0
+    }
+    
+    private func bankAccountUrl(bankAccountId: String = "") -> String {
+        return self.resource.constructUrl(Constants.Objects.BANKACCNT_ENDPT, resourceID: bankAccountId)
+    }
     
 }
 
@@ -78,8 +121,23 @@ class Job {
         self.resource = resource
     }
     
+    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+        
+        return 0
+    }
     
+    func find(jobId: String) -> Any {
+        return 0
+    }
     
+    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
+        return 0
+    }
+
+    
+    private func jobUrl(jobId: String = "") -> String {
+        return self.resource.constructUrl(Constants.Objects.JOB_ENDPT, resourceID: jobId)
+    }
     
 }
 
@@ -96,7 +154,21 @@ class Check {
         self.resource = resource
     }
     
+    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+        return 0
+    }
     
+    func find(checkId: String) -> Any {
+        return 0
+    }
+    
+    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
+        return 0
+    }
+    
+    private func checkUrl(checkId: String = "") -> String {
+        return self.resource.constructUrl(Constants.Objects.CHECK_ENDPT, resourceID: checkId)
+    }
     
     
 }
@@ -113,6 +185,24 @@ class Letter {
     }
     
     
+    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+        
+        return 0
+    }
+    
+    func find(letterId: String) -> Any {
+        return 0
+    }
+    
+    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
+        return 0
+    }
+    
+    
+    private func letterUrl(letterId: String = "") -> String {
+        return self.resource.constructUrl(Constants.Objects.LETTER_ENDPT, resourceID: letterId)
+    }
+    
     
     
 }
@@ -124,13 +214,20 @@ class Letter {
 
 
 class Country {
-    
     var resource = Resource(options: [:])
     init(resource: Resource) {
         self.resource = resource
     }
     
     
+    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+        
+        return 0
+    }
+    
+    private func countryUrl(countryId: String = "") -> String {
+        return self.resource.constructUrl(Constants.Objects.COUNTRY_ENDPT, resourceID: countryId)
+    }
     
     
 }
@@ -150,7 +247,27 @@ class Object {
     }
     
     
+    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+        
+        return 0
+    }
     
+    func find(objectId: String) -> Any {
+        return 0
+    }
+    
+    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
+        return 0
+    }
+    
+    func destroy(objectId: String) -> Any {
+        
+        return 0
+    }
+    
+    private func objectUrl(objectId: String = "") -> String {
+        return self.resource.constructUrl(Constants.Objects.OBJECT_ENDPT, resourceID: objectId)
+    }
     
 }
 
@@ -164,11 +281,27 @@ class Object {
 class Postcard {
     
     var resource = Resource(options: [:])
-    init(resource: Resource) {
+    init(resource : Resource) {
         self.resource = resource
     }
     
+    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+        
+        return 0
+    }
     
+    func find(postcardId: String) -> Any {
+        return 0
+    }
+    
+    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
+        return 0
+    }
+    
+    
+    private func postcardUrl(postcardId: String = "") -> String {
+        return self.resource.constructUrl(Constants.Objects.POSTCARD_ENDPT, resourceID: postcardId)
+    }
     
     
 }
@@ -190,8 +323,19 @@ class Route {
     }
     
     
+    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+        
+        return 0
+    }
+    
+    func find(routeId: String) -> Any {
+        return 0
+    }
     
     
+    private func routeUrl(routeId: String = "") -> String {
+        return self.resource.constructUrl(Constants.Objects.ROUTE_ENDPT, resourceID: routeId)
+    }
     
 }
 
@@ -205,9 +349,15 @@ class State {
         self.resource = resource
     }
     
+    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+        
+        return 0
+    }
     
     
-    
+    private func stateUrl(stateId: String = "") -> String {
+        return self.resource.constructUrl(Constants.Objects.STATE_ENDPT, resourceID: stateId)
+    }
     
 }
 
@@ -219,8 +369,21 @@ class Setting {
         self.resource = resource
     }
     
+
+    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+        
+        return 0
+    }
+    
+    func find(settingId: String) -> Any {
+        return 0
+    }
     
     
+    private func settingUrl(settingId: String = "") -> String {
+        return self.resource.constructUrl(Constants.Objects.SETTING_ENDPT, resourceID: settingId)
+    }
+
     
 }
 

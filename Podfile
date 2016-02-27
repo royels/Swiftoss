@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'Swiftoss' do
 	pod 'Alamofire', '2.0.2'
+    pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 end
 
 target 'SwiftossTests' do
