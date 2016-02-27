@@ -22,9 +22,12 @@ class Swiftoss {
     }
     // Need to specify the module from which to do the lookup.
     // Ty based stack overflow
-    static func send(method: Alamofire.Method, url: String, parameters: Dictionary<String, Any>) -> Any {
-        
-        return 0
+    static func send(method: Alamofire.Method, url: String, parameters: Dictionary<String, AnyObject>) -> Any {
+        var toReturn: AnyObject?
+        Alamofire.request(method, url, parameters: parameters)
+            .responseJSON { response in toReturn = response.result.value! }
+        toReturn = (toReturn == nil) ? "" : toReturn
+        return toReturn
     }
     
     static func crafted(var options: Dictionary<String, Any>) -> Resource {
