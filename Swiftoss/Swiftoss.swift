@@ -20,7 +20,10 @@ class Swiftoss {
     static var API_KEY:String {
         return ""
     }
-    static func send(method: String, url: String, parameters: Dictionary<String, Any>) -> Any {
+    // Need to specify the module from which to do the lookup.
+    // Ty based stack overflow
+    static func send(method: Alamofire.Method, url: String, parameters: Dictionary<String, Any>) -> Any {
+        
         return 0
     }
     

@@ -7,13 +7,13 @@
 //
 
 import Foundation
-
+import Alamofire
 
 struct Constants {
     struct HTTP {
-        static var POST = "post"
-        static var GET  = "get"
-        static var DELETE = "delete"
+        static var POST = Alamofire.Method.POST
+        static var GET  = Alamofire.Method.GET
+        static var DELETE = Alamofire.Method.DELETE
     }
 
     struct Objects {
