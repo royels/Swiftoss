@@ -9,8 +9,6 @@ target 'Swiftoss' do
 end
 
 target 'SwiftossTests' do
-	pod 'Quick'
-	pod 'Nimble'
 
 end
 

@@ -8,6 +8,7 @@
 
 import XCTest
 import Alamofire
+import SwiftyJSON
 @testable import Swiftoss
 
 class SwiftossTests: XCTestCase {
@@ -15,6 +16,8 @@ class SwiftossTests: XCTestCase {
     override func setUp() {
         super.setUp()
         Swiftoss.API_HOST = "https://api.github.com/users/royels"
+        let max = Swiftoss.send(.GET, url: Swiftoss.API_HOST, parameters: [:])
+        debugPrint(max)
     }
     
     override func tearDown() {
@@ -24,7 +27,7 @@ class SwiftossTests: XCTestCase {
     
     func testSend() {
         XCTAssert(true)
-        print(Swiftoss.send(.GET, url: Swiftoss.API_HOST, parameters: [:]))
+
         
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

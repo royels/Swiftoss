@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-
 class Swiftoss {
     
     static var API_HOST:String {
@@ -30,13 +29,20 @@ class Swiftoss {
     // Ty based stack overflow
     static func send(method: Alamofire.Method, url: String, parameters: Dictionary<String, AnyObject>) -> Any {
         var toReturn: AnyObject?
-        Alamofire.request(method, url, parameters: parameters)
-            .responseJSON { (request, response, data, error) in toReturn = JSON(data!)
-        
-            println(json)
+        Alamofire.request(method, url, parameters: parameters, encoding: .JSON)
+            .responseJSON { response in
+                debugPrint(response.request)  // original URL request
+                debugPrint(response.response) // URL response
+                debugPrint(response.data)     // server data
+                debugPrint(response.result)   // result of response serialization
+                
+                if let Jdsn = response.result.value {
+                    debugPrint("JSON: \(Jdsn)")
+                    toReturn = Jdsn
+                }
         }
         toReturn = (toReturn == nil) ? "" : toReturn
-        
+        return toReturn
     }
     
     static func crafted(var options: Dictionary<String, Any>) -> Resource {
