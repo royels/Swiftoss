@@ -7,13 +7,14 @@
 //
 
 import XCTest
+import Alamofire
 @testable import Swiftoss
 
 class SwiftossTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        Swiftoss.API_HOST = "https://api.github.com/users/royels"
     }
     
     override func tearDown() {
@@ -21,16 +22,12 @@ class SwiftossTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testSend() {
+        XCTAssert(true)
+        print(Swiftoss.send(.GET, url: Swiftoss.API_HOST, parameters: [:]))
+        
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+
 }

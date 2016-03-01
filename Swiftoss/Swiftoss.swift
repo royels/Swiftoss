@@ -8,11 +8,17 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class Swiftoss {
     
     static var API_HOST:String {
-        return Constants.Options.API_HOST
+        get {
+            return Constants.Options.API_HOST
+        }
+        set {
+            Constants.Options.API_HOST = newValue
+        }
     }
     static var PROTOCOL:String {
         return Constants.Options.PROTOCOL
@@ -25,9 +31,12 @@ class Swiftoss {
     static func send(method: Alamofire.Method, url: String, parameters: Dictionary<String, AnyObject>) -> Any {
         var toReturn: AnyObject?
         Alamofire.request(method, url, parameters: parameters)
-            .responseJSON { response in toReturn = response.result.value! }
+            .responseJSON { (request, response, data, error) in toReturn = JSON(data!)
+        
+            println(json)
+        }
         toReturn = (toReturn == nil) ? "" : toReturn
-        return toReturn
+        
     }
     
     static func crafted(var options: Dictionary<String, Any>) -> Resource {
