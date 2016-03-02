@@ -36,7 +36,10 @@ struct Constants {
         static var API_HOST = "api.lob.com"
         static var PROTOCOL = "https"
     }
-
     
 
+}
+
+enum ParseError: ErrorType {
+    case JSONError
 }

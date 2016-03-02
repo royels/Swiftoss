@@ -7,17 +7,12 @@
 //
 
 import XCTest
-import Alamofire
-import SwiftyJSON
 @testable import Swiftoss
 
 class SwiftossTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        Swiftoss.API_HOST = "https://api.github.com/users/royels"
-        let max = Swiftoss.send(.GET, url: Swiftoss.API_HOST, parameters: [:])
-        debugPrint(max)
     }
     
     override func tearDown() {

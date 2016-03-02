@@ -28,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C4179BB1C8683FC00D28960 /* TheAlamo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TheAlamo.playground; sourceTree = "<group>"; };
 		4C4454441C708830008365E5 /* Swiftoss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftoss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4454491C708830008365E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C44544E1C708830008365E5 /* SwiftossTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftossTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +68,7 @@
 		4C44543A1C708830008365E5 = {
 			isa = PBXGroup;
 			children = (
+				4C4179BB1C8683FC00D28960 /* TheAlamo.playground */,
 				4C4454461C708830008365E5 /* Swiftoss */,
 				4C4454521C708830008365E5 /* SwiftossTests */,
 				4C4454451C708830008365E5 /* Products */,

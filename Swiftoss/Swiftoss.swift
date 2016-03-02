@@ -27,21 +27,17 @@ class Swiftoss {
     }
     // Need to specify the module from which to do the lookup.
     // Ty based stack overflow
-    static func send(method: Alamofire.Method, url: String, parameters: Dictionary<String, AnyObject>) -> Any {
-        var toReturn: AnyObject?
-        Alamofire.request(method, url, parameters: parameters, encoding: .JSON)
+    static func send(method: Alamofire.Method, url: String, parameters: Dictionary<String, AnyObject>) -> JSON {
+        var toReturn = JSON([:])
+        Alamofire.request(method, url, parameters: parameters)
             .responseJSON { response in
-                debugPrint(response.request)  // original URL request
-                debugPrint(response.response) // URL response
-                debugPrint(response.data)     // server data
-                debugPrint(response.result)   // result of response serialization
-                
-                if let Jdsn = response.result.value {
-                    debugPrint("JSON: \(Jdsn)")
-                    toReturn = Jdsn
+                switch(response.result) {
+                case .Success(let data):
+                    toReturn = JSON(data)
+                case .Failure(let error):
+                    print("Request failed with error: \(error)")
                 }
         }
-        toReturn = (toReturn == nil) ? "" : toReturn
         return toReturn
     }
     
