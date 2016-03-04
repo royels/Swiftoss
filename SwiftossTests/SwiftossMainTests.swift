@@ -9,10 +9,13 @@
 import XCTest
 @testable import Swiftoss
 
-class SwiftossTests: XCTestCase {
+class SwiftossMainTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        Swiftoss.API_HOST = "uglabugla"
+        Swiftoss.API_KEY  = "lobby"
+        Swiftoss.PROTOCOL = "htap"
     }
     
     override func tearDown() {
@@ -20,10 +23,10 @@ class SwiftossTests: XCTestCase {
         super.tearDown()
     }
     
-    func testSend() {
-        XCTAssert(true)
-
-        
+    func testStaticVars() {
+        XCTAssert(Swiftoss.API_KEY == "lobby")
+        XCTAssert(Swiftoss.API_HOST == "uglabugla")
+        XCTAssert(Swiftoss.PROTOCOL == "htap")
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		1F0929811E852080F0E8E0F8 /* Pods_Swiftoss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0111B8494E03EA332D7FCB2 /* Pods_Swiftoss.framework */; };
 		4C44544F1C708830008365E5 /* Swiftoss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4454441C708830008365E5 /* Swiftoss.framework */; };
-		4C4454541C708830008365E5 /* SwiftossTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4454531C708830008365E5 /* SwiftossTests.swift */; };
+		4C4454541C708830008365E5 /* SwiftossMainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4454531C708830008365E5 /* SwiftossMainTests.swift */; };
 		4C4454641C714D71008365E5 /* Swiftoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4454631C714D71008365E5 /* Swiftoss.swift */; };
 		4C4454661C714DF4008365E5 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4454651C714DF4008365E5 /* Directory.swift */; };
 		4C844EE71C72FFA200F237FA /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C844EE61C72FFA200F237FA /* Objects.swift */; };
+		4CA4CFE51C895F3000D2181A /* AddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4CFE41C895F3000D2181A /* AddressTests.swift */; };
 		4CF54EE71C765CFA0004F75D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF54EE61C765CFA0004F75D /* Constants.swift */; };
 		B76EB86301108AB6668411F0 /* Pods_SwiftossTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6791A4B7BB2758C8588F3605 /* Pods_SwiftossTests.framework */; };
 /* End PBXBuildFile section */
@@ -28,15 +29,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C4179BB1C8683FC00D28960 /* TheAlamo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TheAlamo.playground; sourceTree = "<group>"; };
 		4C4454441C708830008365E5 /* Swiftoss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftoss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4454491C708830008365E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C44544E1C708830008365E5 /* SwiftossTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftossTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C4454531C708830008365E5 /* SwiftossTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftossTests.swift; sourceTree = "<group>"; };
+		4C4454531C708830008365E5 /* SwiftossMainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftossMainTests.swift; sourceTree = "<group>"; };
 		4C4454551C708830008365E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C4454631C714D71008365E5 /* Swiftoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiftoss.swift; sourceTree = "<group>"; };
 		4C4454651C714DF4008365E5 /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		4C844EE61C72FFA200F237FA /* Objects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
+		4CA4CFE41C895F3000D2181A /* AddressTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTests.swift; sourceTree = "<group>"; };
+		4CB670F01C86BDD900C59CAA /* TheAlamo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TheAlamo.playground; sourceTree = "<group>"; };
 		4CF54EE61C765CFA0004F75D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6791A4B7BB2758C8588F3605 /* Pods_SwiftossTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftossTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83F7BA06364B043F5E15AAB /* Pods-Swiftoss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftoss.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftoss/Pods-Swiftoss.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,7 +70,7 @@
 		4C44543A1C708830008365E5 = {
 			isa = PBXGroup;
 			children = (
-				4C4179BB1C8683FC00D28960 /* TheAlamo.playground */,
+				4CB670F01C86BDD900C59CAA /* TheAlamo.playground */,
 				4C4454461C708830008365E5 /* Swiftoss */,
 				4C4454521C708830008365E5 /* SwiftossTests */,
 				4C4454451C708830008365E5 /* Products */,
@@ -99,7 +101,9 @@
 		4C4454521C708830008365E5 /* SwiftossTests */ = {
 			isa = PBXGroup;
 			children = (
-				4C4454531C708830008365E5 /* SwiftossTests.swift */,
+				4CA4CFE41C895F3000D2181A /* AddressTests.swift */,
+				4CA4CFE31C895B2400D2181A /* ObjectTests */,
+				4C4454531C708830008365E5 /* SwiftossMainTests.swift */,
 				4C4454551C708830008365E5 /* Info.plist */,
 			);
 			path = SwiftossTests;
@@ -113,6 +117,13 @@
 				4CF54EE61C765CFA0004F75D /* Constants.swift */,
 			);
 			name = SwiftossSource;
+			sourceTree = "<group>";
+		};
+		4CA4CFE31C895B2400D2181A /* ObjectTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ObjectTests;
 			sourceTree = "<group>";
 		};
 		DF99D811B1248B9CE4D767F8 /* Frameworks */ = {
@@ -334,7 +345,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C4454541C708830008365E5 /* SwiftossTests.swift in Sources */,
+				4CA4CFE51C895F3000D2181A /* AddressTests.swift in Sources */,
+				4C4454541C708830008365E5 /* SwiftossMainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

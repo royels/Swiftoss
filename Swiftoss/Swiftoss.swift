@@ -20,10 +20,20 @@ class Swiftoss {
         }
     }
     static var PROTOCOL:String {
+        get {
         return Constants.Options.PROTOCOL
+        }
+        set {
+            Constants.Options.PROTOCOL = newValue
+        }
     }
     static var API_KEY:String {
-        return ""
+        get {
+        return Constants.Options.API_KEY
+        }
+        set {
+            Constants.Options.API_KEY = newValue
+        }
     }
     // Need to specify the module from which to do the lookup.
     // Ty based stack overflow

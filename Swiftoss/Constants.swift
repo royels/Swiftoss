@@ -35,6 +35,7 @@ struct Constants {
     struct Options {
         static var API_HOST = "api.lob.com"
         static var PROTOCOL = "https"
+        static var API_KEY  = ""
     }
     
 

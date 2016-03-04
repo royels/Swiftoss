@@ -37,6 +37,11 @@
                BlueprintName = "SwiftossTests"
                ReferencedContainer = "container:Swiftoss.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "SwiftossTests/unspecifiedMethod_-[SwiftossTests (null)]()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
