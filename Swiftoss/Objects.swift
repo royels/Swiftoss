@@ -37,7 +37,7 @@ class Address {
         Swiftoss.send(.DELETE, url: addressURL(), parameters: options)
     }
     
-    private func addressUrl(addressId: String = "") -> String {
+    private func addressURL(addressId: String = "") -> String {
         return self.resource.constructUrl(Constants.Objects.ADDRESS_ENDPT, resourceID: addressId)
     }
     private func addressVerifyURL() -> String {
@@ -56,19 +56,19 @@ class Area {
         self.resource = resource
     }
     
-    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
-        return 0
+    func list(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.GET, url: areaURL(), parameters: options)
     }
     
-    func find(areaId: String) -> Any {
-        return 0
+    func find(areaId: String) -> JSON {
+        return Swiftoss.send(.GET, url: areaURL(areaId))
     }
     
-    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
-        return 0
+    func create(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.POST, url: areaURL(), parameters: options)
     }
 
-    private func areaUrl(areaId: String = "") -> String {
+    private func areaURL(areaId: String = "") -> String {
         return self.resource.constructUrl(Constants.Objects.AREA_ENDPT, resourceID: areaId)
     }
 
@@ -106,7 +106,7 @@ class BankAccount {
         return 0
     }
     
-    private func bankAccountUrl(bankAccountId: String = "") -> String {
+    private func bankAccountURL(bankAccountId: String = "") -> String {
         return self.resource.constructUrl(Constants.Objects.BANKACCNT_ENDPT, resourceID: bankAccountId)
     }
     
