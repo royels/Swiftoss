@@ -17,26 +17,24 @@ class Address {
        self.resource = resource
     }
     
-    func verify(options: Dictionary<String, Any> = ["":""]) -> Any {
-        return 0
+    func verify(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.POST, url: addressVerifyURL(), parameters: options)
     }
     
-    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
-        
-        return 0
+    func list(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.GET, url: addressURL(), parameters: options)
     }
     
-    func find(addressId: String) -> Any {
-        return 0
+    func find(addressId: String) -> JSON {
+        return Swiftoss.send(.GET, url: addressURL(addressId), parameters: options)
     }
     
-    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
-        return 0
+    func create(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.POST, url: addressURL(), parameters: options)
     }
     
-    func destroy(addressId: String) -> Any {
-        
-        return 0
+    func destroy(addressId: String) -> JSON {
+        Swiftoss.send(.DELETE, url: addressURL(), parameters: options)
     }
     
     private func addressUrl(addressId: String = "") -> String {
