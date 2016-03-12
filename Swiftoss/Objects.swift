@@ -9,6 +9,8 @@
 
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 
 class Address {
@@ -80,30 +82,24 @@ class BankAccount {
         self.resource = resource
     }
     
-    func verify(options: Dictionary<String, Any> = ["":""]) -> Any {
-        return 0
+    func verify(bankAccountId: String, options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.POST, url: bankAccountURL(bankAccountId), parameters: options)
     }
     
-    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
-        
-        return 0
+    func list(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.GET, url: bankAccountURL(), parameters: options)
     }
     
-    func find(bankAccountId: String) -> Any {
-        return 0
+    func find(bankAccountId: String) -> JSON {
+        return Swiftoss.send(.GET, url: bankAccountURL(bankAccountId),parameters: ["":""])
     }
     
-    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
-        return 0
+    func create(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.POST, url: bankAccountURL(), parameters: options)
     }
     
-    func destroy(bankAccountId: String) -> Any {
-        
-        return 0
-    }
-    
-    func verify(bankAccountId: String, options: Dictionary<String, Any>) -> Any {
-        return 0
+    func destroy(bankAccountId: String) -> JSON {
+        return Swiftoss.send(.DELETE, url: bankAccountURL(bankAccountId), parameters: ["":""])
     }
     
     private func bankAccountURL(bankAccountId: String = "") -> String {
