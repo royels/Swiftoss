@@ -28,7 +28,7 @@ class Address {
     }
     
     func find(addressId: String) -> JSON {
-        return Swiftoss.send(.GET, url: addressURL(addressId), parameters: options)
+        return Swiftoss.send(.GET, url: addressURL(addressId), parameters: ["":""])
     }
     
     func create(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
@@ -36,7 +36,7 @@ class Address {
     }
     
     func destroy(addressId: String) -> JSON {
-        Swiftoss.send(.DELETE, url: addressURL(), parameters: options)
+        return Swiftoss.send(.DELETE, url: addressURL(), parameters: ["":""])
     }
     
     private func addressURL(addressId: String = "") -> String {
@@ -63,7 +63,7 @@ class Area {
     }
     
     func find(areaId: String) -> JSON {
-        return Swiftoss.send(.GET, url: areaURL(areaId))
+        return Swiftoss.send(.GET, url: areaURL(areaId), parameters: ["":""])
     }
     
     func create(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
@@ -83,7 +83,7 @@ class BankAccount {
     }
     
     func verify(bankAccountId: String, options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
-        return Swiftoss.send(.POST, url: bankAccountURL(bankAccountId), parameters: options)
+        return Swiftoss.send(.POST, url: bankAccountURL(bankAccountId) + "/verify", parameters: options)
     }
     
     func list(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
@@ -115,17 +115,16 @@ class Job {
         self.resource = resource
     }
     
-    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
-        
-        return 0
+    func list(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.GET, url: jobUrl(), parameters: options)
     }
     
-    func find(jobId: String) -> Any {
-        return 0
+    func find(jobId: String) -> JSON {
+        return Swiftoss.send(.GET, url: jobUrl(jobId))
     }
     
-    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
-        return 0
+    func create(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.GET, url: jobUrl(), parameters: options)
     }
 
     
@@ -148,16 +147,16 @@ class Check {
         self.resource = resource
     }
     
-    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
-        return 0
+    func list(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.GET, url: checkUrl())
     }
     
-    func find(checkId: String) -> Any {
-        return 0
+    func find(checkId: String) -> JSON {
+        return Swiftoss.send(.GET, url: checkUrl(checkId))
     }
     
-    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
-        return 0
+    func create(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.POST, url: checkUrl(), parameters: options)
     }
     
     private func checkUrl(checkId: String = "") -> String {
@@ -179,17 +178,18 @@ class Letter {
     }
     
     
-    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+    func list(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
         
-        return 0
+        return Swiftoss.send(.GET, url: letterUrl(), parameters: options)
+
     }
     
-    func find(letterId: String) -> Any {
-        return 0
+    func find(letterId: String) -> JSON {
+        return Swiftoss.send(.GET, url: letterUrl(letterId))
     }
     
-    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
-        return 0
+    func create(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.POST, url: letterUrl(), parameters: options)
     }
     
     
@@ -214,9 +214,9 @@ class Country {
     }
     
     
-    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+    func list(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
         
-        return 0
+        return Swiftoss.send(.GET, url: countryUrl(), parameters: options)
     }
     
     private func countryUrl(countryId: String = "") -> String {
@@ -229,10 +229,6 @@ class Country {
 
 
 
-
-
-
-
 class Object {
     
     var resource = Resource(options: [:])
@@ -241,22 +237,22 @@ class Object {
     }
     
     
-    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
+    func list(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
         
-        return 0
+        return Swiftoss.send(.GET, url: objectUrl(), parameters: options)
     }
     
-    func find(objectId: String) -> Any {
-        return 0
+    func find(objectId: String) -> JSON {
+        return Swiftoss.send(.GET, url: objectUrl(objectId))
     }
     
-    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
-        return 0
+    func create(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.POST, url: objectUrl(), parameters: options)
     }
     
-    func destroy(objectId: String) -> Any {
+    func destroy(objectId: String) -> JSON {
         
-        return 0
+        return Swiftoss.send(.DELETE, url: objectUrl(objectId))
     }
     
     private func objectUrl(objectId: String = "") -> String {
@@ -279,17 +275,16 @@ class Postcard {
         self.resource = resource
     }
     
-    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
-        
-        return 0
+    func list(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.GET, url: postcardUrl(), parameters: options)
     }
     
-    func find(postcardId: String) -> Any {
-        return 0
+    func find(postcardId: String) -> JSON {
+        return Swiftoss.send(.GET, url: postcardUrl(postcardId))
     }
     
-    func create(options: Dictionary<String, Any> = ["":""]) -> Any {
-        return 0
+    func create(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.POST, url: postcardUrl(), parameters: options)
     }
     
     
@@ -317,13 +312,12 @@ class Route {
     }
     
     
-    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
-        
-        return 0
+    func list(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.GET, url: routeUrl(), parameters: options)
     }
     
-    func find(routeId: String) -> Any {
-        return 0
+    func find(routeId: String) -> JSON {
+        return Swiftoss.send(.GET, url: routeUrl(routeId))
     }
     
     
@@ -343,9 +337,8 @@ class State {
         self.resource = resource
     }
     
-    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
-        
-        return 0
+    func list(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.GET, url: stateUrl(), parameters: options)
     }
     
     
@@ -364,15 +357,13 @@ class Setting {
     }
     
 
-    func list(options: Dictionary<String, Any> = ["":""]) -> Any {
-        
-        return 0
+    func list(options: Dictionary<String, AnyObject> = ["":""]) -> JSON {
+        return Swiftoss.send(.GET, url: settingUrl(), parameters: options)
     }
     
-    func find(settingId: String) -> Any {
-        return 0
+    func find(settingId: String) -> JSON {
+        return Swiftoss.send(.GET, url: settingUrl())
     }
-    
     
     private func settingUrl(settingId: String = "") -> String {
         return self.resource.constructUrl(Constants.Objects.SETTING_ENDPT, resourceID: settingId)

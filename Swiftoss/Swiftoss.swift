@@ -37,7 +37,7 @@ class Swiftoss {
     }
     // Need to specify the module from which to do the lookup.
     // Ty based stack overflow
-    static func send(method: Alamofire.Method, url: String, parameters: Dictionary<String, AnyObject>) -> JSON {
+    static func send(method: Alamofire.Method, url: String, parameters: Dictionary<String, AnyObject> = ["":""]) -> JSON {
         var toReturn = JSON([:])
         Alamofire.request(method, url, parameters: parameters)
             .responseJSON { response in
